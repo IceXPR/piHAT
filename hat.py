@@ -38,7 +38,7 @@ def buttonPress(controlId, value):
   red = (255, 0, 0)
   blue = (0, 0, 255)
   green = (0, 255, 0)
-
+  black = (0, 0, 0)
   sense.clear(back_colour)
   sense.set_pixel(x, y, 255,255,255)
 
@@ -49,8 +49,9 @@ def buttonPress(controlId, value):
     back_colour = red
   if controlId == 8:
     back_colour = blue
-
-
+  if controlId == 13:
+    back_colour = black
+    
 xboxCont = XboxController.XboxController(controllerCallBack = buttonPress)
 xboxCont.start()
 
